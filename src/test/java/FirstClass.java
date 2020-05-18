@@ -1,39 +1,25 @@
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class FirstClass {
 
-    @Test
-    public void test00001() {
-        System.out.println("This will be printed");
+    //HOME WORK:
+    @Test public void testCountLetters(){
+        String input = "hello world!";
+        char targetLetter = 'l';
+        int result = counter(input, targetLetter);
+        System.out.println("String: " + input + " contains: " + result + " letter(s): " + targetLetter);
     }
 
-    @Test
-    public void test0002() {
-        int myNumber = 5;
-
-        System.out.println(myNumber);
+    private int counter(String input, char targetLetter) {
+        int result = 0;
+        for (char eachChar : input.toCharArray()){
+            if (eachChar == targetLetter) result++;
+        }
+        return result;
     }
 
-
-    @Test
-    public void test0003() {
-
-        String messageOne = new String("Who let the dogs out?");
-
-        String messageTwo = "Who who who who!";
-
-        String completeMessage = messageOne + messageTwo;
-
-        System.out.println(completeMessage);
-    }
-
-    @Test
-    public void test004() {
-        int num = 5;
-        String message = "I have " + num + " cookies";
-
-        System.out.println(message);
-    }
 
     @Test
     public void test005() {
@@ -82,9 +68,7 @@ public class FirstClass {
         for (int i = 0; i < myFirstArray.length; i++) {
             System.out.println(myFirstArray[i]);
         }
-
     }
-
 
     @Test
     public void test3() {
@@ -104,7 +88,6 @@ public class FirstClass {
         }
     }
 
-
     @Test
     public void test8() {
 
@@ -122,33 +105,37 @@ public class FirstClass {
     public void test10() {
         int[] arrayofintegers = {1, 9, 9, 5};
         printAllMembersOfAray(arrayofintegers);
-        }
-
-    private void printAllMembersOfAray(int[] arrayofintegers) {
-        for (int i = 0; i <= arrayofintegers.length; i++) {
-            System.out.println(arrayofintegers[i]);
     }
 
+    private void printAllMembersOfAray(int[] arrayofintegers) {
+        for (int i = 0; i < arrayofintegers.length; i++) {
+            System.out.println(arrayofintegers[i]);
+    }
 }
-
 
     @Test
     public void test_swapNumbers() {
         int[] input = {1,2,3,4,5,6};
         int indexL = 0 ;
-        int indexR = 1;
-
+        int indexR = 3;
+        checkImputs(input, indexL, indexR);
         swap(input, indexL, indexR);
+        System.out.println(Arrays.toString(input));
+    }
 
+    private void checkImputs(int[] input, int indexL, int indexR) {
+        if (indexL >= 0 && indexL < input.length && indexR > 0 && indexR < input.length) {
+        System.out.println("Data OK");
+        } else {
+            throw new AssertionError("not ok. IndexR=" + indexR + " : out of " + input.length);
+            //System.out.println("Wrong data");
+        }
     }
 
     private void swap(int[] input, int indexL, int indexR) {
         int tempElement = 0;
-        if (indexL => 0 && indexL < input.length && indexR > 0 && indexR < input.length){
             tempElement = input[indexL];
             input[indexL] = input[indexR];
             input[indexR] = tempElement ;
-        }
     }
-
 }
