@@ -146,7 +146,7 @@ public class FirstClass {
         int tempElement = 0;
         if (indexL => 0 && indexL < input.length && indexR > 0 && indexR < input.length){
             tempElement = input[indexL];
-            input[indexL] = input[indexR] ;
+            input[indexL] = input[indexR];
             input[indexR] = tempElement;
         }
     }
