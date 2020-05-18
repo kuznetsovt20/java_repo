@@ -15,9 +15,6 @@ public class FirstClass {
     }
 
     private void inputValidation(String input) {
-        if (input.length() > Integer.MAX_VALUE) {
-            throw new AssertionError("Input is too large.");
-        }
         if (input.equals("")) {
             throw new AssertionError("No input data");
         } else {
