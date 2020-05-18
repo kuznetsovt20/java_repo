@@ -3,13 +3,26 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 
 public class FirstClass {
-
+    
     //HOME WORK:
     @Test public void testCountLetters(){
         String input = "hello world!";
         char targetLetter = 'l';
+
+        inputValidation(input);
         int result = counter(input, targetLetter);
         System.out.println("String: " + input + " contains: " + result + " letter(s): " + targetLetter);
+    }
+
+    private void inputValidation(String input) {
+        if (input.length() > Integer.MAX_VALUE) {
+            throw new AssertionError("Input is too large.");
+        }
+        if (input.equals("")) {
+            throw new AssertionError("No input data");
+        } else {
+            System.out.println("Input is OK.");
+        }
     }
 
     private int counter(String input, char targetLetter) {
@@ -19,7 +32,7 @@ public class FirstClass {
         }
         return result;
     }
-
+// END of HOMEWORK
 
     @Test
     public void test005() {
