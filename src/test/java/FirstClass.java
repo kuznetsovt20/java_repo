@@ -1,3 +1,5 @@
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -148,4 +150,19 @@ public class FirstClass {
             input[indexL] = input[indexR];
             input[indexR] = tempElement ;
     }
+
+    @Test
+    public void test_ActorCreation(){
+        Actor actor01 = new Actor(30, "Ivan", "Ivanov", 186, 80);
+        int actor01Age = actor01.getAge();
+
+        System.out.println(actor01.firstName);
+        System.out.println(actor01Age);
+
+
+        Assert.assertEquals(actor01Age, 30);
+    }
+
+
+
 }
