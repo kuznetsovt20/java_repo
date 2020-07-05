@@ -153,16 +153,15 @@ public class FirstClass {
 
     @Test
     public void test_ActorCreation(){
-        Actor actor01 = new Actor(30, "Ivan", "Ivanov", 186, 80);
+        Actor actor01 = new Actor(30, "Ivan", "Ivanov", 186, 86);
         int actor01Age = actor01.getAge();
 
-        System.out.println(actor01.firstName);
         System.out.println(actor01Age);
 
+        Assert.assertEquals(actor01Age, 30); //compare parameters
 
-        Assert.assertEquals(actor01Age, 30);
+
     }
-
 
 
 }

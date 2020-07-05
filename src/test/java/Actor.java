@@ -19,14 +19,15 @@ public class Actor {
     }
 
     void speak(){
-            System.out.println("I'm speaking");
-        }
+        System.out.println("I'm speaking");
+    }
 
-        void play(){
-            System.out.println("I'm playing");
-        }
+    void play() {
+        System.out.println("I'm playing");
+    }
 
-        void sing(){
-            System.out.println("I'm singing");
-        }
+    void sing(){
+        System.out.println("I'm singing");
+    }
+
 }

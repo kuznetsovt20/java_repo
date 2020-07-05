@@ -11,7 +11,7 @@ public class Anotations {
     }
 
     @Test
-    public void tesatCase2() {
+    public void testCase2() {
         System.out.println("in test case 2");
     }
 
